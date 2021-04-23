@@ -88,3 +88,6 @@ page {
   justify-content: center;
   align-items: center;
 }
+.btn-work {
+  border-radius: 10%;
+}
