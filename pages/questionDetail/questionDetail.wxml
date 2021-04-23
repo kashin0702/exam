@@ -1,0 +1,6 @@
+<!--pages/questionDetail/questionDetail.wxml-->
+<view class="container">
+  <view class="q-content">
+    
+  </view>
+</view>

@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<mp-navigation-bar back="{{false}}"></mp-navigation-bar>
+<view class="container">
+  <!-- 顶部信息部分 -->
+  <view class="user-title">
+    <!-- 左侧头像 -->
+    <view class="headImg">
+      <open-data class="avatar" type="userAvatarUrl"></open-data>
+    </view>
+    <!-- 右侧信息 -->
+    <view class="rightInfo ">
+      <view class="userName ">{{userInfo.username}}</view>
+      <view class="empl-info">{{userInfo.countertop}}</view>
+    </view>
+  </view>
+  <!-- tab控制栏 -->
+  <view class="tab-control">
+    <view class="tab-item {{currentIndex === index ? 'active' : ''}}" wx:for="{{tabList}}" wx:key="*this"
+      data-idx="{{index}}" bindtap="tabClick">{{item}}</view>
+  </view>
+  <!-- 复用组件，3组阅卷数据 -->
+  <view class="page-container">
+    <view class="page-item" wx:for="{{currentPageList}}" wx:key="index">
+      <view class="test-title">{{item.name}}</view>
+      <view class='test-info'>
+        <view class="info-item">适用员工:{{item.fit_staff}}</view>
+        <view class="info-item">考试时间:{{item.start_time + '至' + item.end_time}}</view>
+        <view class="info-item">考试时长:{{item.time_length}}分钟</view>
+        <view class="info-item">合格标准:{{item.pass_score}}分</view>
+        <view class="info-item">参考人数:{{item.join_count +'/'+item.total_count}}</view>
+        <view class="process">
+          <view class="process-item">批改进度:{{item.percent}}</view>
+          <view class="btn-work" bindtap="goDetail" wx:if="{{currentIndex == 0}}" data-examid="{{item.exam_id}}">开始批改</view>
+          <view class="btn-work" bindtap="goDetail" wx:if="{{currentIndex == 1}}" data-examid="{{item.exam_id}}">继续批改</view>
+          <view class="btn-work" bindtap="goDetail" wx:if="{{currentIndex == 2}}" data-examid="{{item.exam_id}}">查看详情</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

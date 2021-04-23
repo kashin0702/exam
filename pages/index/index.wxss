@@ -1,0 +1,90 @@
+page {
+  background: url(https://minstech-mp2.oss-cn-hangzhou.aliyuncs.com/ynd/uploads/20190910152232bcff52227.png) repeat;
+}
+
+.headImg {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  flex: 2;
+  margin: 20rpx;
+}
+
+.user-title {
+  display: flex;
+}
+
+.rightInfo {
+  flex: 7;
+}
+
+.userName {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.empl-info {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 25rpx;
+}
+
+.tab-control {
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  margin: 20rpx;
+  padding: 10rpx;
+}
+
+.active {
+  color: red;
+  border-bottom: 2rpx solid red;
+}
+/* 试卷容器 */
+.page-item {
+  background-color: #fff;
+  box-shadow: 10rpx 10rpx 10rpx rgba(153,153,153,0.5);
+  border-radius: 5%;
+  margin-bottom: 25rpx;
+  /* 修复圆角遮挡 */
+  overflow: hidden; 
+}
+/* 考试标题 */
+.test-title {
+  padding: 20rpx;
+  background-color: rgb(143, 82, 82);
+  font-weight: 600;
+  /* padding: 20rpx; */
+}
+
+.process {
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx;
+}
+
+.page-container{
+  margin: 20rpx;
+  /* padding: 20rpx; */
+}
+.info-item {
+  padding: 15rpx;
+}
+.btn-work{
+  background-color: rgb(156, 35, 35);
+  padding: 15rpx;
+  color: #fff;
+}
+.process-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

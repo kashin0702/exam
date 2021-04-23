@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/examDetail/examDetail",
+    "pages/questionDetail/questionDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "mp-navigation-bar": "/components/navigation-bar/navigation-bar"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,18 @@
+<!--pages/examDetail/examDetail.wxml-->
+<view class="container">
+  <view class="title">
+    <view class="left">{{examName}}</view>
+    <view class="btn-submit">提交成绩</view>
+  </view>
+  <view class="q-list">
+    <block wx:for="{{questions}}">
+      <view class="q-item">
+        <view class="q-content">{{index + 1}}.({{item.type.text}})({{item.type.value}}) {{item.title}}</view>
+        <view class="people">
+          <view class="left-people">已批改人数：{{item.extra.correct_people_count}}/{{item.extra.totao_people_count}}</view>
+          <view class="btn-confirm" bindtap="goQuestionDetail" data-qid="{{item.question_id}}">批改</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,71 @@
+<!--pages/auth/auth.wxml-->
+<view class="outHead" wx:if="{{!Identity}}">
+  <image mode="widthFix" class="topBg" src="/images/topBg.png"></image>
+  <image class="logo" src="/images/logo2.png"></image>
+  <view class="fo-40 fo-w">员工考试中心</view>
+  <view class="fo-32 selectText">请选择登录身份</view>
+  <view class="tabs panel-around item-center fo-32">
+    <view class="student" bindtap="student">
+     <image src="/images/student.jpg" class="{{IdentityName == 1? 'active' : ''}}"></image>
+    我是考生</view>
+    <view class="teacher" bindtap="teacher">
+    <image src="/images/teacher.jpg"  class="{{IdentityName == 0? 'active' : ''}}"></image>
+    我是评卷人</view>
+  </view>
+  <view class="login-btn" bindtap="goLogin">立即登录</view>
+</view>
+<view class='l_center' wx:if="{{Identity}}">
+
+  <!-- 下拉刷新 -->
+
+  <!-- 登录页面的logo部分 -->
+  <view class='l_logo_center'>
+    <image src='/images/banner.png' mode='aspectFit'></image>
+  </view>
+  <!-- 登录页面登录部分 -->
+  <van-tabs animated active="{{ active }}" bind:change="onChange" color="#AB7326">
+    <van-tab title-style="{{active == 0 ? 'color:#AB7326;' : 'color:#535353'}}" title="手机号登录">
+
+      <view class='l_login_center'>
+        <view class="login-from">
+          <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="loginBtn" wx:if='{{!isPhone}}'>手机号登录</button>
+          <!-- <button bindtap='getlogin' class="loginBtn" wx:if='{{isPhone}}'>手机号登录</button> -->
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title-style="{{active == 1 ? 'color:#AB7326;' : 'color:#535353'}}" title="账号密码登录">
+
+      <view class='l_login_center'>
+        <view class="login-from">
+          <!--账号-->
+          <view class="inputView">
+            <!-- <view>{{content}}</view> -->
+            <image class="nameImage" src="../../images/land-number.png" mode='aspectFit'></image>
+            <!-- <label class="loginLab">账号</label> -->
+            <input class="inputText" value='{{phone}}' placeholder-class='l_account' placeholder="请输入账号" bindinput="phoneInput" maxlength='30' />
+          </view>
+          <!-- <view class="line"></view> -->
+
+          <!--密码-->
+          <view class="inputView l_inputView">
+            <view class='l_inputView2' style="width:90%;">
+              <image class="keyImage" src="../../images/land-password.png" mode='aspectFit'></image>
+              <input class="inputText" value='{{password}}' placeholder-class='l_pass' password="{{show?true:flase}}" placeholder="请输入密码" bindinput="passwordInput" maxlength='30' />
+            </view>
+            <!-- ico样式切换 -->
+            <view class='l_inputView2' bindtap="l_show_pass">
+              <image class="l_keyImage2" src="../../images/land-close-eye.png" mode='aspectFit' wx:if="{{show}}"></image>
+              <image class="l_keyImage3" src="../../images/land_eye_display.png" mode='aspectFit' wx:else></image>
+            </view>
+
+          </view>
+          <!--按钮-->
+          <!-- <view class="loginBtnView"> -->
+          <button class="loginBtn" bindtap="login">登录</button>
+          <!-- </view> -->
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+
+</view>
