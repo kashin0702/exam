@@ -1,6 +1,21 @@
 <!--pages/questionDetail/questionDetail.wxml-->
 <view class="container">
   <view class="q-content">
-    
+    <text style="color:yellow">{{question.number}}.({{question.question.type.text}})({{question.question.type.value+'分'}})</text>
+    {{question.question.title}}
+  </view>
+  <view class="stu-name">
+    考生<text style="color:red;font-weight:bold">{{stu_name}}</text> 答案:
+  </view>
+  <view class="stu-answer">
+    {{question.answer}}
+  </view>
+  <view class="analysis">答案解析:</view>
+  <view class="right-answer"> 
+    {{question.question.analysis}}
+  </view>
+  <view class="points">
+    <text>答题得分：</text>
+    <input style="display:inline-block; width: 80rpx;border: 2rpx solid #eee" type="number" maxlength="2" />分 
   </view>
 </view>
